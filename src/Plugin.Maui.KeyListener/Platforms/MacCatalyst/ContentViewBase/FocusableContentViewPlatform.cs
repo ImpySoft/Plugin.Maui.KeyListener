@@ -1,8 +1,7 @@
-#if MACCATALYST
 using UIKit;
 using ContentView = Microsoft.Maui.Platform.ContentView;
 
-namespace Plugin.Maui.KeyListener.Sample;
+namespace Plugin.Maui.KeyListener;
 
 public class FocusableContentViewPlatform : ContentView
 {
@@ -39,5 +38,3 @@ public class FocusableContentViewPlatform : ContentView
 		}
 	}
 }
-
-#endif
