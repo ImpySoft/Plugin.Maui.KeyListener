@@ -73,5 +73,11 @@
 	<ItemGroup>
 		<None Include="..\..\nuget.png" PackagePath="icon.png" Pack="true" />
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls" Version="9.0.81" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Essentials" Version="9.0.81" />
+	</ItemGroup>
 
 </Project>
