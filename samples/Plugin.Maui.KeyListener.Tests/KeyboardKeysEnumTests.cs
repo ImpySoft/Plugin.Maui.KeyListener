@@ -24,4 +24,6 @@ public class KeyboardKeysEnumTests
             Assert.That(string.IsNullOrWhiteSpace(name), Is.False);
         }
     }
+
+
 }
