@@ -46,6 +46,10 @@
 	  <ProjectReference Include="..\..\src\Plugin.Maui.KeyListener\Plugin.Maui.KeyListener.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <PackageReference Update="Microsoft.Maui.Controls" Version="9.0.81" />
+	</ItemGroup>
+
 	<!--<ItemGroup>
 	  <Compile Update="Controls\NavigableContainer.xaml.cs">
 	    <DependentUpon>NavigableContainer.xaml</DependentUpon>

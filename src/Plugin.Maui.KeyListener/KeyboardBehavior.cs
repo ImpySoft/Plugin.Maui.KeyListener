@@ -5,18 +5,18 @@
 /// </summary>
 public partial class KeyboardBehavior : PlatformBehavior<VisualElement>
 {
-	private KeyboardBehaviorTriggers _triggers;
+	KeyboardBehaviorTriggers? triggers;
 
 	/// <summary>
 	/// The element that received the keypress event.  Needed for determining scope
 	/// </summary>
-	public VisualElement ScopedElement { get; private set; }
+	public VisualElement? ScopedElement { get; private set; }
 
 	/// <summary>
 	/// Behaviors have triggers.  In this implementation they are not used, but required.  Using the trigger in the declaration will
 	/// currently throw a not implemented exception.
 	/// </summary>
-	public KeyboardBehaviorTriggers Triggers => _triggers ??= new KeyboardBehaviorTriggers();
+	public KeyboardBehaviorTriggers Triggers => triggers ??= new KeyboardBehaviorTriggers();
 
 	/// <summary>
 	/// Event raised when the key is pressed down.
@@ -28,12 +28,12 @@ public partial class KeyboardBehavior : PlatformBehavior<VisualElement>
 	/// </summary>
 	public event EventHandler<KeyPressedEventArgs>? KeyUp;
 
-	internal void RaiseKeyDown(KeyPressedEventArgs args)
+	public void RaiseKeyDown(KeyPressedEventArgs args)
 	{
 		KeyDown?.Invoke(this, args);
 	}
 
-	internal void RaiseKeyUp(KeyPressedEventArgs args)
+	public void RaiseKeyUp(KeyPressedEventArgs args)
 	{
 		KeyUp?.Invoke(this, args);
 	}

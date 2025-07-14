@@ -1,6 +1,6 @@
 ﻿namespace Plugin.Maui.KeyListener;
 
-static partial class KeyboardKeysExtensions
+public static partial class KeyboardKeysExtensions
 {
-	public static readonly KeyboardKeys[] KeyboardKeysValues = Enum.GetValues<KeyboardKeys>();
+    public static readonly KeyboardKeys[] KeyboardKeysValues = Enum.GetValues<KeyboardKeys>();
 }

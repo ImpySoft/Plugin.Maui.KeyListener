@@ -6,7 +6,7 @@ using System.Diagnostics;
 /// <remarks>
 ///     https://developer.apple.com/documentation/uikit/uikeyboardhidusage
 /// </remarks>
-static partial class KeyboardKeysExtensions
+public static partial class KeyboardKeysExtensions
 {
     /// <summary>
     /// Maps <see cref="KeyboardKeys"/> to <see cref="UIKeyboardHidUsage"/>.
