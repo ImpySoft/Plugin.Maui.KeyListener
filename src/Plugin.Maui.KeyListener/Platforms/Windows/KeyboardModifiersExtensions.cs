@@ -6,7 +6,7 @@ namespace Plugin.Maui.KeyListener;
 
 static class KeyboardModifiersExtensions
 {
-	static readonly VirtualKeyModifiers[] VirtualKeyModifierValues =
+	static readonly VirtualKeyModifiers[] virtualKeyModifierValues =
 	[
 		VirtualKeyModifiers.Control,
 		VirtualKeyModifiers.Menu,
@@ -48,7 +48,7 @@ static class KeyboardModifiersExtensions
 	public static KeyboardModifiers ToKeyboardModifiers(this VirtualKeyModifiers virtualKeyModifiers)
 	{
 		var keyboardModifiers = KeyboardModifiers.None;
-		foreach (var modifier in VirtualKeyModifierValues)
+		foreach (var modifier in virtualKeyModifierValues)
 		{
 			if (virtualKeyModifiers.HasFlag(modifier))
 			{

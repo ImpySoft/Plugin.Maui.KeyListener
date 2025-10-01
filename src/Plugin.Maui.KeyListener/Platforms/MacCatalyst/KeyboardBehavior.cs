@@ -1,6 +1,6 @@
-﻿namespace Plugin.Maui.KeyListener;
+﻿using UIKit;
 
-using UIKit;
+namespace Plugin.Maui.KeyListener;
 
 public partial class KeyboardBehavior : PlatformBehavior<VisualElement>
 {
@@ -10,7 +10,7 @@ public partial class KeyboardBehavior : PlatformBehavior<VisualElement>
 
 		ScopedElement = bindable;
 
-		Page page = GetParentPage(bindable);
+		var page = GetParentPage(bindable);
 
 		// Register to key press events
 		if (page?.Handler is not IPlatformViewHandler viewHandler ||
@@ -26,7 +26,7 @@ public partial class KeyboardBehavior : PlatformBehavior<VisualElement>
 	{
 		base.OnDetachedFrom(bindable, platformView);
 
-		Page page = GetParentPage(bindable);
+		var page = GetParentPage(bindable);
 
 
 		// Unregister from key press events
@@ -41,7 +41,7 @@ public partial class KeyboardBehavior : PlatformBehavior<VisualElement>
 		keyboardPageViewController.UnregisterKeyboardBehavior(this);
 	}
 
-	private static Page? GetParentPage(VisualElement element)
+	static Page? GetParentPage(VisualElement element)
 	{
 		if (element is Page)
 		{
