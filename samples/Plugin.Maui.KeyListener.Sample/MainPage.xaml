@@ -9,6 +9,7 @@
 
     <ContentPage.Behaviors>
         <keyListener:KeyboardBehavior KeyDown="OnKeyDown_MockGlobal" />
+		<keyListener:GlobalHotKeysBehavior KeyDown="OnGlobalKeydown" />
     </ContentPage.Behaviors>
 
     <Grid ColumnDefinitions="Auto,*" ColumnSpacing="20">

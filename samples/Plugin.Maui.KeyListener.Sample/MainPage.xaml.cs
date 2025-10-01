@@ -36,11 +36,17 @@ public partial class MainPage : ContentPage
 
 	void OnKeyDown_MockGlobal(object sender, KeyPressedEventArgs e)
 	{
-		string newValue = $"KeyPressed= {e.Keys}, Modifiers={e.Modifiers}, Handled={e.Handled}";
+		string newValue = $"Top Level Local KeyPressed= {e.Keys}, Modifiers={e.Modifiers}, Handled={e.Handled}";
 		OutputLabel3.Text = newValue + Environment.NewLine + OutputLabel3.Text;
 	}
 
-	
+	void OnGlobalKeydown(object sender, KeyPressedEventArgs e)
+	{
+		string newValue = $"Global KeyPressed= {e.Keys}, Modifiers={e.Modifiers}, Handled={e.Handled}";
+		OutputLabel3.Text = newValue + Environment.NewLine + OutputLabel3.Text;
+	}
+
+
 	void OnKeyDown_ButtonTest(object sender, KeyPressedEventArgs e)
 	{
 		string newValue = $"KeyPressed= {e.Keys}, Modifiers={e.Modifiers}";
