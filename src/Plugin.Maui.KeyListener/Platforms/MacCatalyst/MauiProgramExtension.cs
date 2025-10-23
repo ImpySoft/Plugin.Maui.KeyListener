@@ -1,3 +1,5 @@
+using System.Runtime.CompilerServices;
+
 namespace Plugin.Maui.KeyListener;
 
 using Microsoft.Maui.Handlers;
@@ -9,6 +11,9 @@ public static partial class MauiProgramExtensions
 {
 	static partial void SetupPlatformKeyListener(MauiAppBuilder builder)
 	{
+		// method swizzling is static in nature
+		RuntimeHelpers.RunClassConstructor(typeof(KeyboardEventHook).TypeHandle);
+
 		builder.ConfigureMauiHandlers(handlers =>
 		{
 			PageHandler.PlatformViewFactory = handler =>

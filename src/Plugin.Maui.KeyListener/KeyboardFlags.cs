@@ -7,5 +7,6 @@ public enum KeyboardModifiers
 	Shift = 2,
 	Command = 4,
 	Control = 8,
-	Alt = 16
+	Alt = 16,
+	CapsLock = 32
 }
