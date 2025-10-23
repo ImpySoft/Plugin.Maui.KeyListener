@@ -4,15 +4,15 @@ using UIKit;
 
 public partial class GlobalHotKeysBehavior : PlatformBehavior<VisualElement>
 {
-    //TODO: Implement MacCatalyst specific functionality for GlobalHotKeysBehavior
-    protected override void OnAttachedTo(VisualElement bindable, UIView platformView)
-    {
-        base.OnAttachedTo(bindable, platformView);
-    }
+	protected override void OnAttachedTo(VisualElement bindable, UIView platformView)
+	{
+		KeyboardEventHook.RegisterGlobalKeyboardBehavior(this, platformView);
+		base.OnAttachedTo(bindable, platformView);
+	}
 
-    //TODO: Implement MacCatalyst specific functionality for GlobalHotKeysBehavior
-    protected override void OnDetachedFrom(VisualElement bindable, UIView platformView)
-    {
-        base.OnDetachedFrom(bindable, platformView);
-    }
+	protected override void OnDetachedFrom(VisualElement bindable, UIView platformView)
+	{
+		KeyboardEventHook.UnregisterGlobalKeyboardBehavior(this);
+		base.OnDetachedFrom(bindable, platformView);
+	}
 }
